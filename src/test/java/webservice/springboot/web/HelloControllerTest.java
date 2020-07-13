@@ -11,14 +11,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest
+@WebMvcTest(controllers = HelloController.class)
 public class HelloControllerTest {
 
     @Autowired
     private MockMvc mvc;
 
     @Test
-    public void return_hello() throws Exception {
+    public void hello가_리턴된다() throws Exception {
         String hello = "hello";
 
         mvc.perform(get("/hello"))
